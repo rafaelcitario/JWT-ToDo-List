@@ -32,6 +32,7 @@ export default defineConfig([
 					message: 'Unexpected property on console object was called'
 				}
 			],
+			"semi": ["error", "always"]
 			'sort-imports': ['error', {
 				ignoreCase: false,
 				ignoreDeclarationSort: false,

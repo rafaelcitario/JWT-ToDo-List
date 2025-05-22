@@ -6,11 +6,18 @@ import swaggerDocs from '../swagger-ui.config';
 import usersRouter from './http/routes/users.routes';
 import { warn } from 'node:console';
 
+import cors from 'cors';
+
+
 const app: express.Application = express();
+app.use( cors( {
+  origin: 'http://localhost:5173',
+  credentials: true
+} ) );
 app.use( express.json() );
-swaggerDocs( app, ENV.SERVER_PORT )
+swaggerDocs( app, ENV.SERVER_PORT );
 app.use( '/', usersRouter );
-app.use( '/', middlewareAuth, postsRouter );
+app.use( '/pub', middlewareAuth, postsRouter );
 
 
 

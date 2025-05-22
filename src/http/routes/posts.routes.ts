@@ -94,7 +94,7 @@ const postsRouter = Router();
  *         description: Unauthorized - missing or invalid token
  */
 
-postsRouter.post( '/pub/create', createPostsController );
-postsRouter.get( '/pub', readPostsController );
+postsRouter.post( '/create', createPostsController );
+postsRouter.get( '/', readPostsController );
 
 export default postsRouter;
